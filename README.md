@@ -9,35 +9,32 @@ cgi_falsk_deploy.sh is an automated script to deploy a "hello world" Flask app.
 
 1. Prepare a hosting space and a domain where you intend to host the python app.
 2. connect to your space via ssh
-3. create a folder named after your domain in the home folder
+3. create a folder named after your domain in the home folder: 
+   ```sh
+   mkdir my_domain.com
+   ```
 4. run the script:
    ```sh
-   curl -sL https://raw.githubusercontent.com/exampleuser/myrepo/main/scripts/myscript.sh | bash
+   curl -sL https://github.com/ujagaga/cgi_falsk_deploy/raw/refs/heads/main/cgi_falsk_deploy.sh | bash
    ```
 
+After this you should be able to see the "Hello from Flask" message on your domain, 
+assuming DNS propagation is done, which may take up to 24 hours.
 
+## What it does
 
-### Prerequisites
+1. Creates a folder structure and necessary apache configuration files:
+```
+├── venv
+├── public_html
+      ├── .htaccess
+      └── cgi-bin
+            ├── cgi_serve.py
+            └── index.py
+```
+2. Installes a virtual environment with Flask package
 
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install packages
-   ```sh
-   npm install
-   ```
-<!-- LICENSE -->
-## License
-
-Distributed under the project_license. See `LICENSE.txt` for more information.
-
-<!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+ujagaga@gmail.com
 

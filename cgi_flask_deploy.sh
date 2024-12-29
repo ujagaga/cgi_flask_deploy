@@ -5,7 +5,7 @@
 # Define variables
 VENV_DIR="venv"
 PYTHON_BIN="python3"
-CURRENT_DIR=$(PWD)
+CURRENT_DIR=$PWD
 HTACCESS_FILE=".htaccess"
 CGI_START_FILE="cgi_serve.py"
 INDEX_FILE="index.py"
