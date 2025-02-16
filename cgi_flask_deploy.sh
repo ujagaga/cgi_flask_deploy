@@ -65,8 +65,14 @@ SetEnv HOME
 
 RewriteEngine On
 RewriteBase /
+
+# Redirect external requests to remove /cgi-bin/cgi_serve.py from the visible URL
+RewriteCond %{THE_REQUEST} \s/cgi-bin/cgi_serve.py/([^\s?]*) [NC]
+RewriteRule ^ cgi-bin/cgi_serve.py/%1 [L,R=301]
+
+# Internally rewrite clean URLs to the actual script
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ cgi-bin/cgi_serve.py/\$1 [QSA,L]
+RewriteRule ^(.*)$ cgi-bin/cgi_serve.py/$1 [QSA,L]
 
 DirectoryIndex cgi-bin/cgi_serve.py
 Options +ExecCGI
