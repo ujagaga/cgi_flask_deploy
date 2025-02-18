@@ -12,10 +12,13 @@ cgi_falsk_deploy.sh is an automated script to deploy a "hello world" Flask app.
 3. create a folder named after your domain in the home folder: 
    ```sh
    mkdir my_domain.com
+   cd my_domain.com
    ```
 4. run the script:
    ```sh
-   curl -sL https://github.com/ujagaga/cgi_falsk_deploy/raw/refs/heads/main/cgi_falsk_deploy.sh | bash
+   curl https://raw.githubusercontent.com/ujagaga/cgi_flask_deploy/refs/heads/main/cgi_flask_deploy.sh -o cgi_flask_deploy.sh
+   chmod +x cgi_flask_deploy.sh
+   ./cgi_flask_deploy.sh
    ```
 
 After this you should be able to see the "Hello from Flask" message on your domain, 
