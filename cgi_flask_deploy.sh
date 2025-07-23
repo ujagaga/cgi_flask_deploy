@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
-
 # Script to create a virtual Python environment and install Flask
+
+# Prompt for domain/subdomain folder name
+read -p "Enter your domain/subdomain folder name (e.g., mywebsite.com): " DOMAIN_DIR
+
+# Check if the folder exists in current path
+if [ -d "$DOMAIN_DIR" ]; then
+    echo "Found folder '$DOMAIN_DIR'. Proceeding..."
+    cd "$DOMAIN_DIR"
+else
+    echo "Error: Folder '$DOMAIN_DIR' not found."
+    echo "Please first configure your domain/subdomain in your hosting control panel."
+    exit 1
+fi
+
 
 # Define variables
 VENV_DIR="venv"
