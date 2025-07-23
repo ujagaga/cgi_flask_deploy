@@ -10,7 +10,7 @@ if [ -d "$DOMAIN_DIR" ]; then
     cd "$DOMAIN_DIR"
 else
     echo "Error: Folder '$DOMAIN_DIR' not found."
-    echo "Please first configure your domain/subdomain in your hosting control panel."
+    echo "Please configure your domain/subdomain in your hosting control panel first. Then run this script"
     exit 1
 fi
 

@@ -9,11 +9,7 @@ cgi_falsk_deploy.sh is an automated script to deploy a "hello world" Flask app.
 
 1. Prepare a hosting space and a domain where you intend to host the python app.
 2. connect to your space via ssh
-3. create a folder named after your domain in the home folder: 
-   ```sh
-   mkdir my_domain.com
-   cd my_domain.com
-   ```
+3. List your folders: ```ls -la``` That should show your configured domain directory.
 4. run the script:
    ```sh
    curl https://raw.githubusercontent.com/ujagaga/cgi_flask_deploy/refs/heads/main/cgi_flask_deploy.sh -o cgi_flask_deploy.sh
@@ -21,8 +17,7 @@ cgi_falsk_deploy.sh is an automated script to deploy a "hello world" Flask app.
    ./cgi_flask_deploy.sh
    ```
 
-After this you should be able to see the "Hello from Flask" message on your domain, 
-assuming DNS propagation is done, which may take up to 24 hours.
+When asked input the domain you just configured. After this you should be able to see the "Hello from Flask" message on your domain, assuming DNS propagation is done, which may take up to 24 hours.
 
 ## What it does
 
@@ -36,6 +31,14 @@ assuming DNS propagation is done, which may take up to 24 hours.
             └── index.py
 ```
 2. Installes a virtual environment with Flask package
+
+## What now
+
+Now you can navigate to your domain folder and activate the python virtual environment:
+
+```source venv/bin/activate```
+
+Then install all your necessary packages using pip and set up your app. 
 
 ## Contact
 
